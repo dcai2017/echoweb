@@ -1,0 +1,56 @@
+<div>
+	{{title}}
+</div>
+<div class="container" ng-controller="formController">
+  <form name="loginForm"
+		ng-submit="login(username, password)">
+<!--
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-5">
+        <input type="text" ng-model="username" name="un" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-5">
+        <input type="password" ng-model="password" name="pwd" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+-->
+		<div class="form-group row"
+			ng-class="{'has-error': (loginForm.$submitted || loginForm.un.$touched) && loginForm.un.$error.required }">
+			<label for="un" class="col-sm-2 col-form-label">Username</label>
+			<div class="col-sm-5">
+			<input type="text" name="un" id="un" required autofocus placeholder="Username" class="form-control"
+				ng-model="username">
+			</div>
+			<div class="help-block" ng-cloak ng-show="(loginForm.$submitted || loginForm.un.$touched) && loginForm.un.$error.required">
+				Please enter your first name as the username
+			</div>
+		</div>
+
+		<div class="form-group row"
+			ng-class="{'has-error': (loginForm.$submitted || loginForm.pw.$touched) && loginForm.pw.$error.required }">
+			<label for="pw" class="col-sm-2 col-form-label">Password</label>
+			<div class="col-sm-5">
+			<input type="password" name="pw" id="pw" required placeholder="Password" class="form-control"
+				ng-model="password">
+			</div>
+			<div class="help-block" ng-cloak ng-show="(loginForm.$submitted || loginForm.pw.$touched) && loginForm.pw.$error.required">
+				Please enter your last name as the password
+			</div>
+		</div>
+
+
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+<!--
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
+         -->
+      </div>
+    </div>
+  </form>
+</div>

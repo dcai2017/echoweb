@@ -1,0 +1,8 @@
+/.classpath
+/.buildpath
+/.project
+/.settings
+/target/
+/node_modules/
+/screenshot.png
+*.DS_Store
